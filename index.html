@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK BINA INFORMATIKA</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark:bg-d-base dark:text-d-on-base bg-l-base text-l-on-base transition-colors duration-300">
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+
+    <button class="scroll-top-btn">
+        <svg class="progress-ring" width="60" height="60">
+            <circle class="progress-ring__circle" r="27" cx="30" cy="30" />
+        </svg>
+    </button>
+    <header id="header"
+        class="fixed top-0 w-full h-auto z-50 font-semibold text-white transition-all duration-500 ease-in-out py-12">
+        <div class="w-full h-full mx-auto px-5 max-w-screen-xl">
+            <div class="relative h-full w-full flex justify-between items-center">
+                <div class="flex gap-1 font-semibold">
+                    <a href="/" class="flex gap-2 text-current">
+                        <img src="/public/img/logo.png" alt="diskominfo" class="w-11 h-11 object-contain">
+                        <div class="flex flex-col ms-3 gap-0">
+                            <p class="uppercase font-bold">BIFOR</p>
+                            <p class="text-sm tracking-[0.18rem]">Kota Bogor</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <nav id="nav" class="hidden lg:flex items-center justify-center text-base gap-4 text-white">
+                        <a href="#beranda"
+                            class="h-8 rounded-full px-3 text-current flex items-center justify-center  nav-link">Beranda
+                        </a>
+                        <a href="#sambutan"
+                            class="h-8 rounded-full px-3 text-current flex items-center justify-center  nav-link">Sambutan
+                        </a>
+                        <a href="#sejarah"
+                            class="h-8 rounded-full px-3 text-current flex items-center justify-center  nav-link">Sejarah
+                        </a>
+                        <a href="#visimisi"
+                            class="h-8 rounded-full px-3 text-current flex items-center justify-center  nav-link">Latar
+                            Belakang
+                        </a>
+                        <a href="#jurusan"
+                            class="h-8 rounded-full px-3 text-current flex items-center justify-center  nav-link">Jurusan
+                        </a>
+                        <div>
+                            <button id="translateButton" class="border-none bg-none mt-2 p-0">
+                                <img src="https://www.google.com/images/icons/product/translate-32.png"
+                                    alt="Google Translate" style="cursor: pointer;">
+                            </button>
+                            <div class="relative">
+                                <div id="google_translate_element"
+                                    class="hidden bg-white p-4 rounded absolute z-10 text-center -bottom-28 -left-72">
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="buttons absolute right-0 top-1/2 -translate-y-1/2 flex gap-1">
+                    <button id="header-drawer-button" aria-label="Toggle drawer open and closed"
+                        class="flex lg:hidden size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-white/20 stroke-current hover:stroke-white ">
+                        <svg id="drawer-open" class="size-full stroke-current">
+                            <use href="/public/svg/ui.svg#menu"></use>
+                        </svg>
+                        <svg id="drawer-close" class="size-full stroke-current">
+                            <use href="/public/svg/ui.svg#x"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="drawer"
+        class="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center lg:hidden bg-white/80 transition-[height] duration-300 ease-in-out backdrop-blur-lg">
+        <nav class="flex flex-col items-center space-y-2 text-dark font-semibold gap-4">
+            <a href="#beranda"
+                class="h-8 rounded-full px-3 text-current flex items-center justify-center  nav-link-drawer">Beranda
+            </a>
+            <a href="#sambutan"
+                class="h-8 rounded-full px-3 text-current flex items-center justify-center  nav-link-drawer">Sambutan
+            </a>
+            <a href="#sejarah"
+                class="h-8 rounded-full px-3 text-current flex items-center justify-center  nav-link-drawer">Sejarah
+            </a>
+            <a href="#visimisi"
+                class="h-8 rounded-full px-3 text-current flex items-center justify-center  nav-link-drawer">Latar
+                Belakang
+            </a>
+            <a href="#jurusan"
+                class="h-8 rounded-full px-3 text-current flex items-center justify-center  nav-link-drawer">Jurusan
+            </a>
+            <div>
+                <button id="translateButtonDrawer" class="border-none bg-none mt-2 p-0">
+                    <img src="https://www.google.com/images/icons/product/translate-32.png" alt="Google Translate"
+                        style="cursor: pointer;">
+                </button>
+                <div class="relative">
+                    <div id="google_translate_element_drawer" class="hidden absolute z-10 text-center -bottom-20 left-1/2 transform -translate-x-1/2">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <main class="overflow-hidden bg-gray-100">
+        <section id="beranda" class="flex min-h-screen items-center justify-center">
+            <div class="flex items-center justify-center min-h-screen w-full"
+                style="background-image: url(/public/img/bifor.jpg)">
+                <div
+                    class="flex items-center justify-center w-full min-h-screen bg-gradient-to-t from-primary to-primary/40 relative">
+                    <div class="pt-48 pb-14 px-5 max-w-4xl text-white text-center">
+                        <h2 class="text-3xl lg:text-5xl font-bold">Saatnya Raih Masa Depan Gemilang di Dunia Teknologi Informasi
+                        </h2>
+                        <p class="mt-4 text-3xl lg:text-5xl font-bold">Bersama
+                            <span
+                                class="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-white">
+                                <span class="relative text-primary">Kami</span>
+                            </span>
+                        </p>
+                        <p class="mt-4">SMK Bina Informatika memberikan kesempatan bagi siswa untuk mengembangkan
+                            keahlian di bidang
+                            teknologi yang akan mempersiapkan mereka menghadapi tantangan masa depan.</p>
+                        <div class="mt-10">
+                            <button type="button"
+                                class="text-white bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-yellow-300 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-pointer">TENTANG
+                                KAMI</button>
+                        </div>
+                        <div
+                            class="relative mt-24 lg:absolute lg:-bottom-7 lg:left-1/2 lg:transform lg:-translate-x-1/2 max-w-6xl bg-white text-black rounded-lg py-2 px-3 grid grid-cols-1 lg:grid-cols-5 gap-2">
+                            <div class="lg:border-r border-gray-300 lg:pr-2 group">
+                                <h3 class="font-semibold group-hover:text-primary">RPL</h3>
+                                <p class="text-gray-300 group-hover:text-primary text-xs">Rekayasa Perangkat Lunak</p>
+                            </div>
+                            <div class="lg:border-r border-gray-300 lg:pr-2 group">
+                                <h3 class="font-semibold group-hover:text-primary">TKJ</h3>
+                                <p class="text-gray-300 group-hover:text-primary text-xs">Teknik Komputer &amp; Jaringan
+                                </p>
+                            </div>
+                            <div class="lg:border-r border-gray-300 lg:pr-2 group">
+                                <h3 class="font-semibold group-hover:text-primary">MM</h3>
+                                <p class="text-gray-300 group-hover:text-primary text-xs">Multimedia</p>
+                            </div>
+                            <div class="lg:border-r border-gray-300 lg:pr-2 group">
+                                <h3 class="font-semibold group-hover:text-primary">OTKP</h3>
+                                <p class="text-gray-300 group-hover:text-primary text-xs">Otorisasi Tata Kelola &amp;
+                                    Perkantoran</p>
+                            </div>
+                            <div class="group">
+                                <h3 class="font-semibold group-hover:text-primary">PKM</h3>
+                                <p class="text-gray-300 group-hover:text-primary text-xs">Perbankan &amp; Keuangan Mikro
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sambutan" class="flex min-h-screen items-center justify-center">
+            <div class="flex items-center justify-center min-h-screen w-full">
+                <div class="pt-24 px-5 max-w-6xl">
+                    <h2 class="text-3xl font-bold">Sambutan kepala Sekolah</h2>
+                    <div class="w-full flex justify-center items-center mt-7 mb-7">
+                        <img src="public/img/dodi.jpeg" alt="dodi.jpg" class="rounded-lg">
+                    </div>
+                    <div>
+                        <div class="mb-4">
+                            <h2 class="text-2xl font-semibold">Dodi Muljawan, S.H., M.M.Pd.</h2>
+                            <p class="text-xs">KEPALA SEKOLAH</p>
+                        </div>
+                        <p class="text-justify">Assalaamu’alaikum Warahmatullahi Wabarakatuh. Salam sejahtera untuk kita
+                            semua. Segala puji
+                            syukur kita panjatkan ke hadirat Allah SWT, karena atas limpahan Rahmat, dan Karunia-Nya
+                            sehingga Website resmi SMK BINA INFORMATIKA Kota Bogor ini dapat terus kita kembangkan
+                            sebagai sarana Informasi yang akurat mengenai segala hal yang berkaitan dengan sekolah ini.
+                            Ucapan terima kasih juga kami haturkan kepada semua pihak yang telah memberikan dukungan dan
+                            masukan dalam kelancaran pengembangan Website ini. Selamat datang di Website resmi SMK BINA
+                            INFORMATIKA Kota Bogor. Di era digital saat ini, website sekolah merupakan pintu gerbang
+                            informasi terdepan sebagai sarana untuk menyebarluaskan berbagai publikasi terkait kemajuan
+                            pendidikan dan pencapaian sekolah terkini. Sebagai media pembelajaran, terlebih di masa
+                            pandemi masih berlangsung, Website sekolah juga diarahkan dapat mendatangkan kemanfaatan
+                            sebagai sarana pembelajaran dengan memuat blog, e-learning, karya dan media pembelajaran
+                            yang dibuat oleh pendidik serta para siswa. Di sisi lain kami sungguh berharap Website ini
+                            juga dapat menjadi sarana silaturahmi dan komunikasi antara sekolah dengan para alumni di
+                            berbagai tempat, sebagai sebuah keluarga besar yang solid serta dapat berkontribusi dalam
+                            memajukan pendidikan di SMK BINA INFORMATIKA tercinta. Kami menyadari website SMK BINA
+                            INFORMATIKA ini masih memiliki banyak kekurangan, oleh karena itu, kami akan terus belajar
+                            dan meng-update diri, sehingga konten dan kualitas tampilan website sekolah ini akan semakin
+                            berkembang. Kritik, saran dan masukan dari berbagai stake holder sekolah tentu sangat kami
+                            harapkan. Kepada tim pengembang dan pengelola, kami berharap agar dapat terus
+                            menyempurnakannya dengan penuh keikhlasan serta tanggung jawab. Terima kasih atas
+                            kerjasamanya, mari terus berkarya menuju SMK BINA INFORMATIKA yang lebih berkualitas dan
+                            berjaya dalam mencerdaskan kehidupan anak bangsa Indonesia. SMK, Bisa...! SMK BINA
+                            INFORMATIKA, Luar Biasa…! Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sejarah" class="flex min-h-screen items-center justify-center">
+            <div class="flex items-center justify-center min-h-screen w-full">
+                <div class="pt-24 px-5 max-w-6xl">
+                    <h2 class="text-3xl font-bold mb-4">SMK BINA INFORMATIKA</h2>
+                    <div class="flex flex-col-reverse lg:flex-row gap-8">
+                        <div>
+                            <p class="text-justify">SMK Bina Informatika Kota Bogor adalah sebuah sekolah menengah
+                                kejuruan swasta yang terletak di Jl. Pahlawan No. 33 Empang, Kota Bogor, Jawa Barat.
+                                Sekolah ini memiliki akreditasi A, yang menunjukkan bahwa standar pendidikan yang
+                                diberikan sangat tinggi dan memenuhi kualifikasi yang ditetapkan oleh lembaga pendidikan
+                                nasional. SMK Bina Informatika menawarkan beberapa program keahlian yang dirancang untuk
+                                mempersiapkan siswa menghadapi dunia kerja di sektor teknologi dan bisnis. Di antaranya
+                                adalah program Teknik Komputer dan Informatika, Manajemen Perkantoran, serta Akuntansi
+                                dan Keuangan. Setiap program keahlian ini tidak hanya berfokus pada teori, tetapi juga
+                                memberikan kesempatan untuk praktik langsung di laboratorium dan ruang praktik yang
+                                tersedia di sekolah.</p>
+                            <br>
+                            <p class="text-justify">Fasilitas di SMK Bina Informatika sangat mendukung proses belajar
+                                mengajar, dengan ruang kelas yang nyaman, ruang perpustakaan untuk mendalami berbagai
+                                materi, serta ruang laboratorium yang dilengkapi dengan peralatan modern untuk menunjang
+                                pembelajaran di bidang teknik dan informatika. Selain itu, ada juga fasilitas lain
+                                seperti ruang pimpinan, ruang guru, ruang ibadah, UKS, dan berbagai fasilitas penunjang
+                                lainnya yang membuat siswa merasa nyaman dan terpenuhi kebutuhan mereka selama
+                                beraktivitas di sekolah. Sekolah ini juga memiliki ruang untuk kegiatan ekstrakurikuler
+                                seperti OSIS yang aktif, serta tempat bermain dan olahraga yang dapat digunakan untuk
+                                menunjang pengembangan minat dan bakat siswa.</p>
+                            <br>
+                            <p class="text-justify">Dengan tujuan untuk mencetak generasi muda yang siap bekerja di
+                                bidang teknologi dan bisnis, SMK Bina Informatika Kota Bogor terus berkomitmen
+                                memberikan pendidikan berkualitas yang relevan dengan perkembangan zaman.</p>
+                        </div>
+                        <img src="public/img/bifor.jpg" alt="bifor.jpg" class="w-full max-w-108 h-116 object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="visimisi" class="flex min-h-screen items-center justify-center pb-14">
+            <div class="flex items-center justify-center min-h-screen w-full">
+                <div class="pt-24 px-5 flex flex-col gap-8 max-w-6xl">
+                    <div class="w-full bg-white border-l-4 border-yellow-400 py-4 px-8">
+                        <h3 class="text-xl text-center font-semibold mb-4">LATAR BELAKANG</h3>
+                        <p>Seiring berkembangnya teknologi, dan banyaknya persaingan industri saat ini, maka setiap
+                            orang berhak mempunyai keterampilan dan kreatifitas untuk bertahan dalam Globalisasi dunia,
+                            untuk itu pendidikan sangatlah penting demi meningkatkan sumber daya manusia yang lebih baik
+                            yang bisa bermanfaat buat orang lain. Oleh karena itu Sekolah Menengah Kejuruan (SMK) BINA
+                            INFORMATIKA siap untuk mendidik Siswa - Siswi agar mempunyai keterampilan dan menjadikan
+                            calon tenaga kerja yang Profesional</p>
+                    </div>
+                    <div class="w-full bg-white border-l-4 border-yellow-400 py-4 px-8">
+                        <h3 class="text-xl text-center font-semibold mb-4">VISI &amp; MISI</h3>
+                        <div class="mb-4">
+                            <h2 class="text-lg font-semibold mb-2">Visi</h2>
+                            <p>SMK Bina Informatika Memadukan IMTAQ dan IPTEK terdepan dalam pengembangan terukur dalam
+                                kemempuan untuk menghasilkan lulusan yang berkualitas, memiliki standar Nasional untuk
+                                menuju Internasional dalam Teknologi Informasi</p>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold mb-2">Misi</h2>
+                            <p>Menyiapkan siswa-siswi untuk:</p>
+                            <ul class="list-decimal list-inside">
+                                <li>Siap berkompetisi di lapangan kerja dan ber sifat profesional</li>
+                                <li>Mampu berkarier di dunia usaha dan industri</li>
+                                <li>Menjadikan seseorang yang cerdas kreatif dan inovatif</li>
+                                <li>Menghasilkan lulusan yang dapat memadu kan IMTAQ dan IPTEK</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="jurusan" class="flex min-h-screen items-center justify-center bg-blue-950 text-white">
+            <div class="flex items-center justify-center min-h-screen w-full">
+                <div class="pt-24 pb-24 px-5 flex flex-col justify-center items-center gap-8 max-w-6xl">
+                    <div class="text-center mb-7">
+                        <h2 class="text-3xl font-bold">Kompetensi dan Keahlian</h2>
+                        <p>bertujuan untuk membekali peserta didik dengan terampil, pengetahuan dan sikap agar kompeten
+                            dalam mengembangkan kemampuan :</p>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-sm text-gray-900">
+                            <a href="#">
+                                <img class="rounded-t-lg h-72 w-full object-cover" src="/public/img/rpl.jpg" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <p>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                    Rekayasa Perangkat Lunak</h5>
+                                </p>
+                                <ul class="list-decimal list-inside">
+                                    <li>Pemrograman Aplikasi Berbasis Desktop</li>
+                                    <li>Analisa dan Perancangan sistem</li>
+                                    <li>Arsitektur Aplikasi Desktop , Mobile, Web dan Enterprise</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-sm text-gray-900">
+                            <a href="#">
+                                <img class="rounded-t-lg h-72 w-full object-cover" src="/public/img/tkj.jpg" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <p>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                    Teknik Komputer &amp; Jaringan</h5>
+                                </p>
+                                <ul class="list-decimal list-inside">
+                                    <li>IT Support Jaringan</li>
+                                    <li>Perakitan dan Perbaikan Komputer</li>
+                                    <li>Administrator Jaringan Komputer LAN dan WAN</li>
+                                    <li>aplikasi Teknik Komputer dan Jaringan interaktif</li>
+                                    <li>Keamanan Jaringan Terpusat</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-sm text-gray-900">
+                            <a href="#">
+                                <img class="rounded-t-lg h-72 w-full object-cover" src="/public/img/mm.jpg" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <p>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                    Multimedia</h5>
+                                </p>
+                                <ul class="list-decimal list-inside">
+                                    <li>Mengembangkan citra dan animasi digital</li>
+                                    <li>Mengembangkan laman (web) interaktif</li>
+                                    <li>Mengembangkan Merekam dan menyunting audio-video</li>
+                                    <li>Mengembangkan aplikasi multimedia interaktif</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-sm text-gray-900">
+                            <a href="#">
+                                <img class="rounded-t-lg h-72 w-full object-cover" src="/public/img/otkp.jpg" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <p>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                    Otorisasi Tata Kelola &amp; Perkantoran</h5>
+                                </p>
+                                <ul class="list-decimal list-inside">
+                                    <li>Penyusunan Surat Tugas</li>
+                                    <li>Penyusunan Prosedur Administrasi</li>
+                                    <li>Penyusunan Laporan Kinerja</li>
+                                    <li>Pengelolaan Arsip dan Dokumen</li>
+                                    <li>Penyusunan Jadwal Rapat dan Kegiatan</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-sm text-gray-900">
+                            <a href="#">
+                                <img class="rounded-t-lg h-72 w-full object-cover" src="/public/img/pkm.png" alt="" />
+                            </a>
+                            <div class="p-5">
+                                <p>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                    Perbankan &amp; Keuangan Mikro</h5>
+                                </p>
+                                <ul class="list-decimal list-inside">
+                                    <li>Simulasi Transaksi Perbankan</li>
+                                    <li>Penyusunan Laporan Keuangan Mikro</li>
+                                    <li>Perhitungan Bunga Pinjaman</li>
+                                    <li>Studi Kasus Lembaga Keuangan Mikro</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex items-center justify-center bg-white">
+            <div class="flex items-center justify-center w-full">
+                <div class="py-24 px-5 flex flex-col justify-center gap-8 w-full max-w-6xl">
+                    <div class="w-full">
+                        <div class="flex flex-col gap-10 xl:gap-14 lg:flex-row lg:justify-between">
+                            <div class="w-full">
+                                <div class="font-bold text-5xl text-primary mb-6 text-center ">
+                                    500+
+                                </div>
+                                <p class="text-lg text-gray-500 leading-7 text-center">Jumlah Murid</p>
+                            </div>
+                            <div class="w-full">
+                                <div class="font-bold text-5xl text-primary mb-6 text-center ">
+                                    20+
+                                </div>
+                                <p class="text-lg text-gray-500 leading-7 text-center">Jumlah Pengajar</p>
+                            </div>
+                            <div class="w-full">
+                                <div class="font-bold text-5xl text-primary mb-6 text-center ">
+                                    5
+                                </div>
+                                <p class="text-lg text-gray-500 leading-7 text-center">Total Jurusan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="pt-12 pb-8 content">
+            <div class="w-full px-5">
+                <div class="px-2 sm:mx-4 text-center">
+                    <h1 class="text-3xl font-semibold text-dark">SMK BINA INFORMATIKA</h1>
+                </div>
+                <div class="px-2 sm:mx-4 grid grid-cols-1 gap-x-1.5 md:grid-cols-2 lg:grid-cols-4 mt-7 justify-center">
+                    <div class="telp text-center grid">
+                        <h2 class="text-dark text-lg font-medium mb-0.5">Telp</h2>
+                        <h3 class="text-primary text-base">(0251) 8366732</h3>
+                    </div>
+                    <div class="email text-center grid">
+                        <h2 class="text-dark text-lg font-medium mb-0.5">Email - Informasi</h2>
+                        <h3 class="text-primary text-base">smkbinainformatikabogor@gmail.com</h3>
+                    </div>
+                    <div class="email text-center grid">
+                        <h2 class="text-dark text-lg font-medium mb-0.5">Operator</h2>
+                        <h3 class="text-primary text-base">Irna Hardi</h3>
+                    </div>
+                    <div class="email text-center grid">
+                        <h2 class="text-dark text-lg font-medium mb-0.5">Website</h2>
+                        <h3 class="text-primary text-base"> http://smkbifor.sch.id/</h3>
+                    </div>
+                </div>
+                <!-- Group Icons -->
+                <div class="px-2 sm:mx-4 flex flex-wrap gap-4 mt-7 justify-center">
+                    <!-- Google Icon -->
+                    <div class="p-2 bg-white/10 rounded-full">
+                        <svg class="w-4 h-4 text-dark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12.037 21.998a10.313 10.313 0 0 1-7.168-3.049 9.888 9.888 0 0 1-2.868-7.118 9.947 9.947 0 0 1 3.064-6.949A10.37 10.37 0 0 1 12.212 2h.176a9.935 9.935 0 0 1 6.614 2.564L16.457 6.88a6.187 6.187 0 0 0-4.131-1.566 6.9 6.9 0 0 0-4.794 1.913 6.618 6.618 0 0 0-2.045 4.657 6.608 6.608 0 0 0 1.882 4.723 6.891 6.891 0 0 0 4.725 2.07h.143c1.41.072 2.8-.354 3.917-1.2a5.77 5.77 0 0 0 2.172-3.41l.043-.117H12.22v-3.41h9.678c.075.617.109 1.238.1 1.859-.099 5.741-4.017 9.6-9.746 9.6l-.215-.002Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <!-- Facebook Icon -->
+                    <div class="p-2 bg-white/10 rounded-full">
+                        <svg class="w-4 h-4 text-dark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <!-- Instagram Icon -->
+                    <div class="p-2 bg-white/10 rounded-full">
+                        <svg class="w-4 h-4 text-dark" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+                                stroke-width="0.3" stroke="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-7">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3855.9281002400585!2d106.77681301986911!3d-6.597456689770928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5ea815e50b7%3A0x328cd4976023307b!2sSMK%20Bina%20Informatika!5e0!3m2!1sid!2sid!4v1742388129807!5m2!1sid!2sid"
+                        class="w-full max-w-xl h-64 border-0 px-5" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <!-- Copyright -->
+                <div class="text-center mt-7">
+                    <p class="text-dark/80 text-xs">Copyright © 2025 Ammar. All
+                        Right Reserved</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+    <script type="text/javascript">
+        const scrollButton = document.querySelector('.scroll-top-btn');
+        const circle = document.querySelector('.progress-ring__circle');
+        const radius = circle.r.baseVal.value;
+        const circumference = radius * 2 * Math.PI;
+
+        circle.style.strokeDasharray = `${circumference} ${circumference}`;
+        circle.style.strokeDashoffset = circumference;
+
+        function setProgress(percent) {
+            const offset = circumference - (percent / 100 * circumference);
+            circle.style.strokeDashoffset = offset;
+        }
+
+        function updateScroll() {
+            const scrollTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = window.scrollY;
+            const scrollPercent = (scrolled / scrollTotal) * 100;
+
+            setProgress(scrollPercent);
+
+            if (scrolled > 300) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        }
+
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('scroll', updateScroll);
+    </script>
+    <script>
+        var cursor = document.querySelector('.cursor');
+        var cursorinner = document.querySelector('.cursor2');
+        var a = document.querySelectorAll('a');
+
+        document.addEventListener('mousemove', function(e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            cursorinner.style.left = x + 'px';
+            cursorinner.style.top = y + 'px';
+        });
+
+        document.addEventListener('mousedown', function() {
+            cursor.classList.add('click');
+            cursorinner.classList.add('cursorinnerhover')
+        });
+
+        document.addEventListener('mouseup', function() {
+            cursor.classList.remove('click')
+            cursorinner.classList.remove('cursorinnerhover')
+        });
+
+        a.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                cursor.classList.add('hover');
+            });
+            item.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        })
+    </script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'id',
+                    layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
+
+            document.addEventListener('scroll', function() {
+                var translateElement = document.getElementById("google_translate_element");
+
+                // Sembunyikan elemen saat halaman dimuat
+                translateElement.style.display = "none";
+            });
+
+            document.getElementById("translateButton").onclick = function() {
+                var translateElement = document.getElementById("google_translate_element");
+
+                // Tampilkan elemen ketika tombol diklik
+                if (translateElement.style.display === "none") {
+                    translateElement.style.display = "block";
+
+                    // Posisi elemen di bawah tombol dan digeser ke kiri sedikit
+                    var buttonRect = this.getBoundingClientRect();
+                } else {
+                    translateElement.style.display = "none"; // Sembunyikan jika diklik lagi
+                }
+            };
+        </script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'id',
+                    layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                    autoDisplay: false
+                }, 'google_translate_element_drawer');
+            }
+
+            document.addEventListener('scroll', function() {
+                var translateElementDrawer = document.getElementById("google_translate_element_drawer");
+
+                // Sembunyikan elemen saat halaman dimuat
+                translateElementDrawer.style.display = "none";
+            });
+
+            document.getElementById("translateButtonDrawer").onclick = function() {
+                var translateElementDrawer = document.getElementById("google_translate_element_drawer");
+
+                // Tampilkan elemen ketika tombol diklik
+                if (translateElementDrawer.style.display === "none") {
+                    translateElementDrawer.style.display = "block";
+
+                    // Posisi elemen di bawah tombol dan digeser ke kiri sedikit
+                    var buttonRect = this.getBoundingClientRect();
+                } else {
+                    translateElementDrawer.style.display = "none"; // Sembunyikan jika diklik lagi
+                }
+            };
+        </script>
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        </script>
+        <script>
+            function onScroll() {
+                const header = document.getElementById("header");
+                //const navbarTop = document.getElementById("navbar-top");
+                const nav = document.getElementById("nav");
+                if (window.scrollY > 0) {
+                    // Update header
+                    header.classList.add("bg-white", "text-dark", "py-5", "shadow-lg");
+                    header.classList.remove("text-white", "py-12");
+
+                    // Update nav
+                    nav.classList.add("text-gray-500");
+                    nav.classList.remove("text-white");
+
+                    // Update navbarTop
+                    //navbarTop.classList.add("bg-white", "text-dark", "py-3");
+                    //navbarTop.classList.remove("text-white", "py-5");
+
+                } else {
+                    // Kembali ke kondisi awal ketika scroll berada di atas
+                    header.classList.add("text-white", "py-12");
+                    header.classList.remove("bg-white", "py-5", "text-dark", "shadow-lg");
+
+                    // Update nav
+                    nav.classList.remove("text-gray-500");
+
+                    // Update navbarTop
+                    //navbarTop.classList.remove("bg-white", "text-dark", "py-3");
+                    //navbarTop.classList.add("text-white", "py-5");
+                }
+            }
+
+
+            document.addEventListener("scroll", onScroll)
+            document.addEventListener("DOMContentLoaded", onScroll);
+        </script>
+        <script>
+            function navbar() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav-link');
+                if (window.scrollY > 0) {
+                    sections.forEach(section => {
+                        let top = window.scrollY;
+                        let offset = section.offsetTop - 150;
+                        let height = section.offsetHeight;
+                        let id = section.getAttribute('id');
+                        if (top >= offset && top < offset + height) {
+                            navLinks.forEach(link => {
+                                link.classList.remove('text-primary');
+                                document.querySelector('.nav-link[href*=' + id + ']').classList.add(
+                                    'text-primary');
+                            });
+                        }
+                    });
+                } else {
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-primary');
+                    });
+                }
+
+            };
+
+            document.addEventListener("scroll", navbar)
+        </script>
+        <script>
+            const drawer = document.getElementById("drawer");
+            const drawerButton = document.getElementById("header-drawer-button");
+
+            drawerButton.addEventListener('click', function() {
+                drawer.classList.toggle('open');
+                drawerButton.classList.toggle('open');
+            });
+
+            function drawerNavbar() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.nav-link-drawer');
+                if (window.scrollY > 0) {
+                    sections.forEach(section => {
+                        let top = window.scrollY;
+                        let offset = section.offsetTop - 150;
+                        let height = section.offsetHeight;
+                        let id = section.getAttribute('id');
+                        if (top >= offset && top < offset + height && top !== 0) {
+                            navLinks.forEach(link => {
+                                link.classList.remove('text-primary');
+                                document.querySelector('.nav-link-drawer[href*=' + id + ']').classList.add('text-primary');
+                            });
+                        }
+                    });
+                } else {
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-primary');
+                    });
+                }
+
+                // Hide the drawer when scrolling
+                if (drawer.classList.contains('open')) {
+                    drawer.classList.remove('open');
+                    drawerButton.classList.remove('open');
+                }
+            };
+
+            document.addEventListener("scroll", drawerNavbar);
+            </script>
+</body>
+
+</html>

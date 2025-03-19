@@ -1,0 +1,127 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px; /* Ukuran button menjadi 60px */
+    height: 60px; /* Ukuran button menjadi 60px */
+    background-color: white;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top-btn::before {
+    content: "";
+    width: 15px; /* Ukuran panah */
+    height: 15px; /* Ukuran panah */
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    transform: rotate(45deg);
+    margin-top: 6px;
+}
+
+.progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px; /* Ukuran SVG menjadi 60px */
+    height: 60px; /* Ukuran SVG menjadi 60px */
+}
+
+.progress-ring__circle {
+    stroke: #242f9b;
+    stroke-width: 5; /* Ketebalan stroke tetap 5 */
+    fill: transparent;
+    transition: stroke-dashoffset 0.1s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%; /* Menyesuaikan transform origin agar tepat di tengah */
+}
+
+
+.hidden-navbar {
+    transform: translateY(-100%);
+}
+
+.navbar-second-fixed {
+    top: 0 !important;
+}
+
+iframe.skiptranslate {
+    display: none !important;
+}
+
+.cursor {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 1px solid #242F9B;
+    -webkit-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+    position: fixed;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    -webkit-transform: translate(calc(-50% + 15px), -50%);
+        -ms-transform: translate(calc(-50% + 15px), -50%);
+            transform: translate(calc(-50% + 15px), -50%);
+  }
+
+  .cursor.hover {
+    display: none;
+  }
+
+  .cursor2 {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #242F9B;
+    opacity: .3;
+    position: fixed;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 999999;
+    -webkit-transition: width .3s, height .3s, opacity .3s;
+    transition: width .3s, height .3s, opacity .3s;
+  }
+
+  .cursor2.hover {
+    display: none;
+  }
+
+
+  #header-drawer-button > #drawer-open {
+    display: block
+}
+
+#header-drawer-button > #drawer-close {
+    display: none
+}
+
+#header-drawer-button.open > #drawer-open {
+    display: none
+}
+
+#header-drawer-button.open > #drawer-close {
+    display: block
+}
+
+#drawer.open {
+    height: 100%
+}
