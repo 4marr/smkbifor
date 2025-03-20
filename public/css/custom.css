@@ -10,8 +10,8 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 60px; /* Ukuran button menjadi 60px */
-    height: 60px; /* Ukuran button menjadi 60px */
+    width: 50px; /* Ukuran button menjadi 50px */
+    height: 50px; /* Ukuran button menjadi 50px */
     background-color: white;
     border-radius: 50%;
     display: none;
@@ -26,8 +26,8 @@ body {
 
 .scroll-top-btn::before {
     content: "";
-    width: 15px; /* Ukuran panah */
-    height: 15px; /* Ukuran panah */
+    width: 10px; /* Ukuran panah */
+    height: 10px; /* Ukuran panah */
     border-top: 3px solid black;
     border-left: 3px solid black;
     transform: rotate(45deg);
@@ -38,8 +38,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 60px; /* Ukuran SVG menjadi 60px */
-    height: 60px; /* Ukuran SVG menjadi 60px */
+    width: 50px; /* Ukuran SVG menjadi 50px */
+    height: 50px; /* Ukuran SVG menjadi 50px */
 }
 
 .progress-ring__circle {
